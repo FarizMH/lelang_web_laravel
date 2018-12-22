@@ -16,4 +16,16 @@ Route::get('/', function () {
 });
 Route::get('/about', 'aboutController@about');
 Route::get('/index', 'aboutController@home');
+Route::get('/indexUser', 'indexUser@home');
 Route::resource('bidder', 'BidderController'); 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home_user', 'User@index');
+Route::get('/login_user', 'User@login');
+Route::post('/loginPost', 'User@loginPost');
+Route::get('/register_user', 'User@register');
+Route::post('/registerPost', 'User@registerPost');
+Route::get('/logout', 'User@logout');

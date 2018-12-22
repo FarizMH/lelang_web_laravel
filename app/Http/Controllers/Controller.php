@@ -10,4 +10,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function setPasswordAttribute($password)
+{
+    $this->attributes['password'] = \Hash::make($password);
+}
 }

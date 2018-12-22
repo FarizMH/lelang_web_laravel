@@ -9,7 +9,7 @@
     @include('items.nav')
     @include('items.header')
     @include('items.content')
-    @include('items.footer')
+    
     <!-- Page Content -->
     
 
@@ -19,9 +19,8 @@
    
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
 
   </body>
-
+@include('items.footer')
 </html>

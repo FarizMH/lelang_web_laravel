@@ -1,4 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!DOCTYPE html>
+<html lang="en">
+
+  @include('items.head')
+
+  <body>
+
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Start Bootstrap</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,17 +47,41 @@
               <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Register
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/register_user">Bidders</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/login_user">auctioner</a>
-                    </div>
-                </li>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{Session::get('name')}} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
           </ul>
         </div>
 
       </div>
     </nav>
+    @include('items.header')
+    @include('items.content')
+    <p>Hallo, . Apakabar?</p>
+    <!-- Page Content -->
+    
+
+     
+
+    <!-- Footer -->
+   
+
+    <!-- Bootstrap core JavaScript -->
+    
+
+  </body>
+@include('items.footer')
+</html>
